@@ -3,8 +3,12 @@
   "private": true,
   "scripts": {
     "generate": "npx fast-crud-builder generate --api ./admin-api/api.yaml --panel ./admin-panel/panel.yaml",
-    "dev": "concurrently \"npm run dev --prefix admin-api\" \"npm run dev --prefix admin-panel\"",
-    "postinstall": "npm install --prefix admin-api && npm install --prefix admin-panel"
+    "dev": "concurrently \"npm run dev-api\" \"npm run dev-panel\"",
+    "dev-api": "npm run dev --prefix admin-api",
+    "dev-panel": "npm run dev --prefix admin-panel",
+    "postinstall": "npm run install-api && npm run install-panel",
+    "install-api": "npm install --prefix admin-api",
+    "install-panel": "npm install --prefix admin-panel"
   },
   "devDependencies": {
     "concurrently": "^8.0.1"
