@@ -2,42 +2,45 @@ import React from "react";
 
 const Home = () => {
   return (
-    <div className="p-6 max-w-3xl mx-auto">
-      <h1 className="text-3xl font-bold mb-4 text-blue-600">🚀 Project Generator</h1>
-      <p className="text-gray-700 mb-4">
-        Welcome! This project was created to help you build structured, maintainable CRUD apps using <strong>Vite</strong>, <strong>Tailwind CSS</strong>, <strong>TanStack Query</strong>, and a customizable generator based on <code>generate.yaml</code>.
-      </p>
+    <div className="p-6 max-w-6xl mx-auto space-y-6">
+      <h1 className="text-3xl font-bold text-gray-800">Dashboard</h1>
 
-      <div className="bg-gray-50 border rounded-lg p-4 mb-6">
-        <h2 className="text-lg font-semibold text-gray-800 mb-2">🛠 How to Use</h2>
-        <ol className="list-decimal list-inside text-gray-700 space-y-1">
-          <li>Create or modify the <code>generate.yaml</code> file.</li>
-          <li>Define your routes and entity fields.</li>
-          <li>Run <code>node generate.js</code> to auto-generate forms, lists, and pages.</li>
-          <li>Start building your app!</li>
-        </ol>
+      {/* Quick Stats */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="bg-white p-4 rounded-xl shadow-md border">
+          <h2 className="text-gray-600">Total Products</h2>
+          <p className="text-2xl font-bold text-blue-600">128</p>
+        </div>
+        <div className="bg-white p-4 rounded-xl shadow-md border">
+          <h2 className="text-gray-600">Orders Today</h2>
+          <p className="text-2xl font-bold text-green-600">24</p>
+        </div>
+        <div className="bg-white p-4 rounded-xl shadow-md border">
+          <h2 className="text-gray-600">New Customers</h2>
+          <p className="text-2xl font-bold text-purple-600">8</p>
+        </div>
       </div>
 
-      <div className="bg-blue-50 text-blue-900 border-l-4 border-blue-400 p-4 rounded">
-        <strong>Example <code>generate.yaml</code>:</strong>
-        <pre className="text-sm mt-2 bg-white p-3 rounded border overflow-auto">
-{`routes:
-  - name: products
-    label: Produits
-    crud: true
-    fields:
-      - name: name
-        label: Nom
-        type: text
-      - name: price
-        label: Prix
-        type: number
+      {/* Navigation Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="bg-blue-50 border border-blue-300 p-5 rounded-xl hover:bg-blue-100 transition">
+          <h3 className="text-xl font-semibold text-blue-800">Manage Products</h3>
+          <p className="text-gray-700">Create, edit, or remove products from your inventory.</p>
+        </div>
+        <div className="bg-green-50 border border-green-300 p-5 rounded-xl hover:bg-green-100 transition">
+          <h3 className="text-xl font-semibold text-green-800">View Orders</h3>
+          <p className="text-gray-700">Track order status and manage fulfillment.</p>
+        </div>
+      </div>
 
-  - name: dashboard
-    label: Tableau de Bord
-    crud: false
-    component: Dashboard`}
-        </pre>
+      {/* Recent Activity */}
+      <div className="bg-white p-4 rounded-xl shadow-md border">
+        <h2 className="text-lg font-semibold mb-3">Recent Activity</h2>
+        <ul className="text-gray-700 list-disc list-inside space-y-1">
+          <li>Added new product “Wireless Headphones”.</li>
+          <li>Order #3245 marked as shipped.</li>
+          <li>New customer registered: John Doe.</li>
+        </ul>
       </div>
     </div>
   );
