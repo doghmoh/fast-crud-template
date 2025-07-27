@@ -1,0 +1,28 @@
+projectName: fast-crud-template
+defaultRoute: home
+auth: true
+layout:
+  withSidebar: true
+  withHeader: true
+  contentLayout:
+    props:
+      title: string
+      subtitle: string
+      onAdd: function
+      addLabel: string
+
+entities:
+  - name: products
+    route: /products
+    crud: true
+    label: Produits
+
+  - name: orders
+    route: /orders
+    crud: true
+    label: Commandes
+
+  - name: customers
+    route: /customers
+    crud: true
+    label: Clients

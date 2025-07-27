@@ -1,0 +1,14 @@
+{
+  "name": "fast-crud-template",
+  "private": true,
+  "scripts": {
+    "generate": "fast-crud-builder generate --api ./admin-api/api.yaml --panel ./admin-panel/panel.yaml",
+    "dev": "concurrently \"npm run dev --prefix admin-api\" \"npm run dev --prefix admin-panel\""
+  },
+  "dependencies": {
+    "fast-crud-builder": "*"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.1"
+  }
+}
