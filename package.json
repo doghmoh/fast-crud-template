@@ -2,13 +2,14 @@
   "name": "fast-crud-template",
   "private": true,
   "scripts": {
-    "generate": "fast-crud-builder generate --api ./admin-api/api.yaml --panel ./admin-panel/panel.yaml",
-    "dev": "concurrently \"npm run dev --prefix admin-api\" \"npm run dev --prefix admin-panel\""
-  },
-  "dependencies": {
-    "fast-crud-builder": "*"
+    "generate": "npx fast-crud-builder generate --api ./admin-api/api.yaml --panel ./admin-panel/panel.yaml",
+    "dev": "concurrently \"npm run dev --prefix admin-api\" \"npm run dev --prefix admin-panel\"",
+    "postinstall": "npm install --prefix admin-api && npm install --prefix admin-panel"
   },
   "devDependencies": {
     "concurrently": "^8.0.1"
+  },
+  "dependencies": {
+    "fast-crud-builder": "^1.0.13"
   }
 }

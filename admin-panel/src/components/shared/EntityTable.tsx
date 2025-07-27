@@ -13,8 +13,10 @@ const EntityTable: React.FC<Props> = ({ entityName, onEdit, searchTerm }) => {
     queryKey: entityName,
   });
 
-  const { data, isLoading } = useGetAll();
+  const { response, isLoading } = useGetAll();
   const del = useDelete();
+
+  const [data = [], limit, page, total] = response || [];
 
   const filtered = data?.filter((item: any) =>
     item?.name?.toLowerCase().includes(searchTerm.toLowerCase())

@@ -7,7 +7,6 @@ const helmet = require("helmet");
 const errorHandler = require("./middleware/errorHandler");
 const myrouter = require("./routes/v1");
 const { apiKeyAuth } = require("./middleware/apiKeyAuth");
-const { createDefaultAdmin } = require("./controllers/authController");
 
 dotenv.config();
 
@@ -41,7 +40,6 @@ mongoose
   .connect("mongodb://localhost:27017/?replicaSet=rs0")
   .then(async () => {
     console.log("✅ MongoDB connected");
-    await createDefaultAdmin();
 
     app.listen(process.env.PORT || 3000, () =>
       console.log(`🚀 Server on http://localhost:${process.env.PORT || 3000}`)

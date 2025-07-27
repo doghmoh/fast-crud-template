@@ -16,7 +16,7 @@ models:
       supplier:
         ref: Supplier
       description:
-        type: text
+        type: string
     options:
       pagination: true
       search:
@@ -28,7 +28,7 @@ models:
       name:
         type: string
       description:
-        type: text
+        type: string
     options:
       pagination: false
 
@@ -61,7 +61,7 @@ models:
       username:
         type: string
       role:
-        type: enum
+        type: string
         values:
           - admin
           - staff
@@ -81,7 +81,7 @@ models:
       date:
         type: date
       note:
-        type: text
+        type: string
 
   - name: StockOut
     fields:

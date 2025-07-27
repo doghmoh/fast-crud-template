@@ -2,7 +2,7 @@
 # Admin API ignores
 admin-api/logs
 admin-api/*.log
-admin-api/node_modules
+admin-api/node_modules/**
 admin-api/dist
 admin-api/dist-ssr
 admin-api/*.local
@@ -10,7 +10,7 @@ admin-api/*.local
 # Admin Panel ignores
 admin-panel/logs
 admin-panel/*.log
-admin-panel/node_modules
+admin-panel/node_modules/**
 admin-panel/dist
 admin-panel/dist-ssr
 admin-panel/*.local
@@ -26,3 +26,4 @@ admin-panel/*.local
 *.sln
 *.sw?
 .env
+node_modules
